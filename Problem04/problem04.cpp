@@ -46,20 +46,24 @@ void max_sub(int* arg, int size)
     int MaxSoFar = 0;
 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    for(int i = 0; i < size; i++)
+    {
+        MaxTail = MaxTail + arg[i];
+        if(MaxTail < 0)
+        {
+            reset(subTail, &subTail_idx);
+        }
+        else
+        {
+            append(subTail, arg[i], &subTail_idx);
+        }
+
+        if(MaxSoFar < MaxTail)
+        {
+            MaxSoFar = MaxTail;
+            assign(subSoFar, &subSoFar_idx, subTail, &subTail_idx);
+        }
+    }    
 }
 
 int main()
