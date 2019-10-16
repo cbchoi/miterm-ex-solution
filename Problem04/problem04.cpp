@@ -44,14 +44,14 @@ void max_sub(int* arg, int size)
 {
     int MaxTail = 0; 
     int MaxSoFar = 0;
-
-    
+  
     for(int i = 0; i < size; i++)
     {
         MaxTail = MaxTail + arg[i];
         if(MaxTail < 0)
         {
             reset(subTail, &subTail_idx);
+            MaxTail = 0;
         }
         else
         {
